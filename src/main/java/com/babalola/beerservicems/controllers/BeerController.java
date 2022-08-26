@@ -5,7 +5,6 @@ import com.babalola.beerservicems.models.BeerDTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.UUID;
 
 @RestController
@@ -26,11 +25,11 @@ public class BeerController {
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
-    @PutMapping("/beerId")
+    @PutMapping("{beerId}")
     public ResponseEntity updateBeerDetails(@PathVariable("beerId") UUID beerId, @RequestBody BeerDTO updatedBeer) {
 
         //Implement Logic
-        return new ResponseEntity(HttpStatus.NO_CONTENT);
+        return new ResponseEntity(HttpStatus.OK);
     }
 
     @DeleteMapping("{beerId}")
