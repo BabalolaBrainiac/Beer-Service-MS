@@ -1,40 +1,50 @@
 package com.babalola.beerservicems.controllers;
-
-
 import com.babalola.beerservicems.models.BeerDTO;
+import com.babalola.beerservicems.services.BeerService;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 
-@RestController
+
 @RequestMapping("/api/beer")
+@RestController
 public class BeerController {
+    private final BeerService beerService;
+    public BeerController(BeerService beerService) {
+        this.beerService = beerService;
+    }
 
-    @GetMapping("{beerId}")
+    @GetMapping({"/{beerId}"})
     public ResponseEntity<BeerDTO> getBeerById(@PathVariable("beerId") UUID beerId) {
-
-        //Implement Logic
-        return new ResponseEntity<>(BeerDTO.builder().build(), HttpStatus.OK);
+        return new ResponseEntity<>(beerService.getBeerById(beerId), HttpStatus.OK);
     }
 
     @PostMapping()
-    public ResponseEntity<BeerDTO> createBeer(BeerDTO newBeer) {
+    public ResponseEntity handlePost(@RequestBody BeerDTO beerDTO) {
+        BeerDTO newBeer = beerService.saveNewBeer(beerDTO);
 
-        //Implement Logic
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        HttpHeaders header = new HttpHeaders();
+        header.add("Location", "/beer" + newBeer.getId().toString() );
+
+        return new ResponseEntity(header, HttpStatus.CREATED);
+
     }
 
-    @PutMapping("{beerId}")
-    public ResponseEntity updateBeerDetails(@PathVariable("beerId") UUID beerId, @RequestBody BeerDTO updatedBeer) {
+    @PutMapping({"/{beerId}"})
+    public ResponseEntity updateBeer(@PathVariable("beerId") UUID beerId, @RequestBody BeerDTO beerDTO) {
+       beerService.updateBeer(beerId, beerDTO);
 
-        //Implement Logic
-        return new ResponseEntity(HttpStatus.OK);
+       return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
-    @DeleteMapping("{beerId}")
-    public void deleteBeerById(@PathVariable("beerId") UUID beerId) {
+    @DeleteMapping({"/{beerId}"})
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteBeerById(@PathVariable("beerId") UUID beerId){
+        beerService.deleteById(beerId);
 
-        //Implement Logic
+
     }
+
 }
