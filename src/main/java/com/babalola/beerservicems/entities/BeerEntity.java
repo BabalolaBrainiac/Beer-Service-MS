@@ -36,12 +36,16 @@ public class BeerEntity {
     private Timestamp lastModifiedDate;
 
     private String beerName;
+
     private String beerStyle;
+
     private Integer brewableQuantity;
+
     private Integer minOnHand;
+
     private BigDecimal beerPrice;
 
-    @Column(updatable = false)
+    @Column(updatable = false, unique = true)
     private Long upc;
 
 }

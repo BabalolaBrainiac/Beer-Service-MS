@@ -4,6 +4,10 @@ import com.babalola.beerservicems.services.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.ConstraintViolationException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 
@@ -38,4 +42,5 @@ public class CustomerController {
     public void deleteCustomerById(@PathVariable("customerId") UUID customerId) {
         customerService.deleteCustomer(customerId);
     }
+
 }
