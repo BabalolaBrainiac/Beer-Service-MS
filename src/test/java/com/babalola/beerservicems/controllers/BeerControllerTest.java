@@ -43,7 +43,6 @@ class BeerControllerTest {
 
 
     }
-
     @Test
     void createBeer() throws Exception {
 
