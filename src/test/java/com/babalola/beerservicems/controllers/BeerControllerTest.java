@@ -1,5 +1,6 @@
 package com.babalola.beerservicems.controllers;
 
+import com.babalola.beerservicems.bootstrap.BeerLoader;
 import com.babalola.beerservicems.models.BeerDTO;
 import com.babalola.beerservicems.models.BeerType;
 import com.babalola.beerservicems.services.BeerService;
@@ -71,7 +72,7 @@ class BeerControllerTest {
                 .name("Heiniken")
                 .beerType(BeerType.LAGER)
                 .price(new BigDecimal("15.99"))
-                .upc(9092302390239L)
+                .upc(BeerLoader.BEER_1_UPC)
                 .build();
 
     }

@@ -17,7 +17,6 @@ import java.util.UUID;
 @Setter
 @Builder
 @Entity
-@Data
 public class BeerEntity {
 
     @Id
@@ -46,6 +45,6 @@ public class BeerEntity {
     private BigDecimal beerPrice;
 
     @Column(updatable = false, unique = true)
-    private Long upc;
+    private String upc;
 
 }

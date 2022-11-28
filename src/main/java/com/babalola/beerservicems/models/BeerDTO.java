@@ -38,7 +38,7 @@ public class BeerDTO implements Serializable {
 
     @Positive
     @NotNull
-    private Long upc;
+    private String upc;
 
     @NotNull
     @Positive
