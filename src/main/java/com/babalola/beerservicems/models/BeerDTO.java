@@ -36,7 +36,6 @@ public class BeerDTO implements Serializable {
     @NotNull
     private BeerType beerType;
 
-    @Positive
     @NotNull
     private String upc;
 
