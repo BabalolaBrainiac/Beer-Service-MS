@@ -2,7 +2,7 @@ package com.babalola.beerservicems.controllers;
 
 import com.babalola.beerservicems.models.BeerDTO;
 import com.babalola.beerservicems.models.BeerListPageable;
-import com.babalola.beerservicems.models.BeerType;
+import com.babalola.beerservicems.models.BeerStyle;
 import com.babalola.beerservicems.services.BeerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister;
@@ -20,7 +20,7 @@ import java.util.UUID;
 @RequestMapping("/api/beer")
 @RestController
 public class BeerController {
-    private static final Integer DEFAULT_PAGE_NUMBER = 0;
+    private static final Integer DEFAULT_PAGE_NUMBER = 1;
     private static final Integer DEFAULT_PAGE_SIZE = 25;
     private final BeerService beerService;
 
@@ -29,7 +29,7 @@ public class BeerController {
     public ResponseEntity<BeerListPageable> listBeers(@RequestParam(value = "pageNumber", required = false) Integer pageNumber,
                                                       @RequestParam(value = "pageSize", required = false) Integer pageSize,
                                                       @RequestParam(value = "beerName", required = false) String beerName,
-                                                      @RequestParam(value = "beerType", required = false) BeerType beerType,
+                                                      @RequestParam(value = "beerStyle", required = false) BeerStyle beerStyle,
                                                       @RequestParam(value = "showInventoryOnHand", required = false) Boolean showInventoryOnHand) {
 
 
@@ -45,9 +45,10 @@ public class BeerController {
             pageSize = DEFAULT_PAGE_SIZE;
         }
 
-        BeerListPageable beerList = beerService.listBeers(beerName, beerType, PageRequest.ofSize(pageNumber), showInventoryOnHand);
+        BeerListPageable beerList = beerService.listBeers(beerName, beerStyle, PageRequest.ofSize(pageNumber), showInventoryOnHand);
 
-        return new ResponseEntity<BeerListPageable>(beerList, HttpStatus.OK);
+        System.out.println(beerList);
+        return new ResponseEntity<>(beerList, HttpStatus.OK);
     }
 
     @GetMapping({"/{beerId}"})

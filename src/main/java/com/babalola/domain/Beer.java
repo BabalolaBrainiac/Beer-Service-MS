@@ -1,6 +1,6 @@
 package com.babalola.domain;
 
-import com.babalola.beerservicems.models.v2.BeerStyleEnum;
+
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
@@ -14,9 +14,9 @@ import java.util.UUID;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Getter
 @Setter
+@Builder
 @Entity
 public class Beer {
 
@@ -29,13 +29,13 @@ public class Beer {
 
     private String beerName;
 
-    private BeerStyleEnum beerStyle;
+    private String beerStyle;
 
     @Version
     private Long version;
 
     @Column(unique = true)
-    private Long upc;
+    private String upc;
 
     private BigDecimal price;
 

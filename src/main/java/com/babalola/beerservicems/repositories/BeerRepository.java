@@ -1,19 +1,19 @@
 package com.babalola.beerservicems.repositories;
 
-import com.babalola.beerservicems.entities.BeerEntity;
-import com.babalola.beerservicems.models.BeerType;
+import com.babalola.beerservicems.models.BeerStyle;
+import com.babalola.domain.Beer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface BeerRepository extends JpaRepository<BeerEntity, UUID> {
-    Page<BeerEntity> findAllByBeerName(String beerName, Pageable pageable);
+public interface BeerRepository extends JpaRepository<Beer, UUID> {
+    Page<Beer> findAllByBeerName(String beerName, Pageable pageable);
 
-    Page<BeerEntity> findAllByBeerStyle(BeerType beerType, Pageable pageable);
+    Page<Beer> findAllByBeerStyle(BeerStyle beerStyle, Pageable pageable);
 
-    Page<BeerEntity> findAllByBeerNameAndBeerStyle(String beerName, BeerType beerType, Pageable pageable);
+    Page<Beer> findAllByBeerNameAndBeerStyle(String beerName, BeerStyle beerStyle, Pageable pageable);
 
-    BeerEntity findByUpc(String upc);
+    Beer findByUpc(String upc);
 }

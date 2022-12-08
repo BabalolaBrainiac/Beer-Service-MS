@@ -2,7 +2,7 @@ package com.babalola.beerservicems.controllers;
 
 import com.babalola.beerservicems.bootstrap.BeerLoader;
 import com.babalola.beerservicems.models.BeerDTO;
-import com.babalola.beerservicems.models.BeerType;
+import com.babalola.beerservicems.models.BeerStyle;
 import com.babalola.beerservicems.services.BeerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -69,7 +69,7 @@ class BeerControllerTest {
     BeerDTO getValidBeerDto() {
         return BeerDTO.builder()
                 .name("Heiniken")
-                .beerType(BeerType.LAGER)
+                .beerStyle(BeerStyle.LAGER)
                 .price(new BigDecimal("15.99"))
                 .upc(BeerLoader.BEER_1_UPC)
                 .build();

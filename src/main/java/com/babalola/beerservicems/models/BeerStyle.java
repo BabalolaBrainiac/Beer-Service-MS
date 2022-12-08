@@ -1,6 +1,6 @@
 package com.babalola.beerservicems.models;
 
 
-public enum BeerType {
+public enum BeerStyle {
     LAGER, PILSNER, STOUT, GOSE, PORTER, ALE, WHEAT, IPA, PALE_ALE, SIASON
 }

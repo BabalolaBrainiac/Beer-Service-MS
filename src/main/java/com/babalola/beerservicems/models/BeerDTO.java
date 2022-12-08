@@ -34,7 +34,7 @@ public class BeerDTO implements Serializable {
     private String name;
 
     @NotNull
-    private BeerType beerType;
+    private BeerStyle beerStyle;
 
     @NotNull
     private String upc;
@@ -51,5 +51,7 @@ public class BeerDTO implements Serializable {
     @Null
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ssZ", shape = JsonFormat.Shape.STRING)
     private OffsetDateTime lastUpdatedAt;
+
+    private Integer quantityOnHand;
 
 }
