@@ -17,9 +17,9 @@ public class BeerInventoryDTO {
 
     private UUID id;
 
-    private OffsetDateTime createdAt;
+    private OffsetDateTime createdDate;
 
-    private OffsetDateTime lastUpdatedAt;
+    private OffsetDateTime lastModifiedDate;
 
     private UUID beerId;
 

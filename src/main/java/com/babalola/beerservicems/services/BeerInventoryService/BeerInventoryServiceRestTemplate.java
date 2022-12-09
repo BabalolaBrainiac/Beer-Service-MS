@@ -17,7 +17,7 @@ import java.util.UUID;
 
 
 @Slf4j
-@ConfigurationProperties(prefix = "com.babalola.beer-inventory-service", ignoreInvalidFields = true)
+@ConfigurationProperties(prefix = "com.babalola", ignoreInvalidFields = true)
 @Component
 public class BeerInventoryServiceRestTemplate implements BeerInventoryInterface {
 
@@ -38,7 +38,7 @@ public class BeerInventoryServiceRestTemplate implements BeerInventoryInterface 
     @Override
     public Integer getOnHandInventory(UUID beerId) {
 
-        log.debug("Connected to Beer Inventory Service");
+        System.out.println("Connected to Beer Inventory Service");
 
         ResponseEntity<List<BeerInventoryDTO>> responseEntity = restTemplate
                 .exchange(beerInventoryServiceHost + BEER_INVENTORY_SERVICE_PATH, HttpMethod.GET, null,

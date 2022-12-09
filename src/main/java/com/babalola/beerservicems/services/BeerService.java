@@ -66,7 +66,7 @@ public class BeerService implements BeerInterface {
                                     beerPage.getPageable().getPageSize()),
                     beerPage.getTotalElements());
         }
-        return null;
+        return beerPagedList;
     }
 
     @Cacheable(cacheNames = "beerCache", key = "#beerId", condition = "#showInventoryOnHand == true")

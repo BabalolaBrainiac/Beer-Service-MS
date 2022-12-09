@@ -7,14 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 public abstract class BeerMapperDecorator implements BeerMapper {
-
     private BeerInventoryInterface beerInventoryInterface;
 
     private BeerMapper beerMapper;
 
-
     @Autowired
-    public void setBeerInventoryInterface(BeerInventoryInterface beerInventoryInterface) {
+    public void setBeerInventoryService(BeerInventoryInterface beerInventoryInterface) {
         this.beerInventoryInterface = beerInventoryInterface;
     }
 
@@ -35,7 +33,7 @@ public abstract class BeerMapperDecorator implements BeerMapper {
         return dto;
     }
 
-    @Autowired
+    @Override
     public Beer beerDtoToBeer(BeerDTO beerDTO) {
         return beerMapper.beerDtoToBeer(beerDTO);
     }

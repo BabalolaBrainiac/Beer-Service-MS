@@ -20,7 +20,7 @@ import java.util.UUID;
 @RequestMapping("/api/beer")
 @RestController
 public class BeerController {
-    private static final Integer DEFAULT_PAGE_NUMBER = 1;
+    private static final Integer DEFAULT_PAGE_NUMBER = 10;
     private static final Integer DEFAULT_PAGE_SIZE = 25;
     private final BeerService beerService;
 
@@ -45,9 +45,9 @@ public class BeerController {
             pageSize = DEFAULT_PAGE_SIZE;
         }
 
-        BeerListPageable beerList = beerService.listBeers(beerName, beerStyle, PageRequest.ofSize(pageNumber), showInventoryOnHand);
+        BeerListPageable beerList = beerService.listBeers(beerName, beerStyle, PageRequest.ofSize(pageNumber), true);
 
-        System.out.println(beerList);
+        System.out.println("Controller working");
         return new ResponseEntity<>(beerList, HttpStatus.OK);
     }
 

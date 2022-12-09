@@ -32,67 +32,67 @@ public class BeerLoader implements CommandLineRunner {
 
         Beer beer1 = Beer.builder()
                 .beerName("Orijin")
-                .beerStyle(BeerStyle.PORTER.name())
-                .minOnHand(12)
-                .quantityToBrew(200)
-                .price(new BigDecimal("12.95"))
+                .beerStyle(BeerStyle.ALE.name())
+                .minOnHand(152)
+                .quantityToBrew(2030)
+                .price(new BigDecimal("42.95"))
                 .upc(BEER_1_UPC)
                 .build();
 
         Beer beer2 = Beer.builder()
-                .beerName("Start")
+                .beerName("Stout")
                 .beerStyle(BeerStyle.PORTER.name())
-                .minOnHand(12)
-                .quantityToBrew(200)
+                .minOnHand(142)
+                .quantityToBrew(2300)
                 .price(new BigDecimal("12.95"))
                 .upc(BEER_2_UPC)
                 .build();
 
         Beer beer3 = Beer.builder()
                 .beerName("33")
-                .beerStyle(BeerStyle.PORTER.name())
-                .minOnHand(12)
-                .quantityToBrew(200)
-                .price(new BigDecimal("12.95"))
+                .beerStyle(BeerStyle.SIASON.name())
+                .minOnHand(132)
+                .quantityToBrew(2060)
+                .price(new BigDecimal("15.95"))
                 .upc(BEER_3_UPC)
                 .build();
 
-//            beerRepository.save(Beer.builder()
-//                    .beerName("Guiness Extra Smooth")
-//                    .beerStyle(BeerStyle.PORTER.name())
-//                    .quantityToBrew(20000)
-//                    .upc("1234L")
-//                    .price(new BigDecimal("200.54"))
-//                    .minOnHand(1500)
-//                    .build());
-//
-//            beerRepository.save(Beer.builder()
-//                    .beerName("Trophy Extra Smooth")
-//                    .beerStyle(BeerStyle.PORTER.name())
-//                    .quantityToBrew(10800)
-//                    .upc("12345L")
-//                    .price(new BigDecimal("440.54"))
-//                    .minOnHand(1500)
-//                    .build());
-//
-//            beerRepository.save(Beer.builder()
-//                    .beerName("Heineken")
-//                    .beerStyle(BeerStyle.PORTER.name())
-//                    .quantityToBrew(900000)
-//                    .upc("123456L")
-//                    .price(new BigDecimal("700.54"))
-//                    .minOnHand(1500)
-//                    .build());
-//
-//
-//            beerRepository.save(Beer.builder()
-//                    .beerName("Guiness Extra Smooth")
-//                    .beerStyle(BeerStyle.PORTER.name())
-//                    .quantityToBrew(20000)
-//                    .upc("127823L")
-//                    .price(new BigDecimal("200.54"))
-//                    .minOnHand(1500)
-//                    .build());
+        beerRepository.save(Beer.builder()
+                .beerName("Guiness Extra Smooth")
+                .beerStyle(BeerStyle.PILSNER.name())
+                .quantityToBrew(20000)
+                .upc("123453534L")
+                .price(new BigDecimal("200.54"))
+                .minOnHand(1500)
+                .build());
+
+        beerRepository.save(Beer.builder()
+                .beerName("Trophy Extra Smooth")
+                .beerStyle(BeerStyle.IPA.name())
+                .quantityToBrew(10800)
+                .upc("1235654345L")
+                .price(new BigDecimal("440.54"))
+                .minOnHand(1500)
+                .build());
+
+        beerRepository.save(Beer.builder()
+                .beerName("Heineken")
+                .beerStyle(BeerStyle.ALE.name())
+                .quantityToBrew(900000)
+                .upc("123345345456L")
+                .price(new BigDecimal("700.54"))
+                .minOnHand(1500)
+                .build());
+
+
+        beerRepository.save(Beer.builder()
+                .beerName("Guiness Extra Smooth")
+                .beerStyle(BeerStyle.LAGER.name())
+                .quantityToBrew(20000)
+                .upc("127823L")
+                .price(new BigDecimal("200.54"))
+                .minOnHand(1500)
+                .build());
 
         beerRepository.save(beer1);
         beerRepository.save(beer2);
