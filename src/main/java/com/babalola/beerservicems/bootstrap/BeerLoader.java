@@ -5,12 +5,13 @@ import com.babalola.beerservicems.repositories.BeerRepository;
 import com.babalola.domain.Beer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
 
 @RequiredArgsConstructor
-//@Component
+@Component
 public class BeerLoader implements CommandLineRunner {
 
     public static final String BEER_1_UPC = "0631234200036";

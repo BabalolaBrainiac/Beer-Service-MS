@@ -30,6 +30,7 @@ public abstract class BeerMapperDecorator implements BeerMapper {
     public BeerDTO beerToBeerDtoWithInventory(Beer beer) {
         BeerDTO dto = beerMapper.beerToBeerDTO(beer);
         dto.setQuantityOnHand(beerInventoryInterface.getOnHandInventory(beer.getId()));
+        dto.setName(beer.getBeerName());
         return dto;
     }
 
