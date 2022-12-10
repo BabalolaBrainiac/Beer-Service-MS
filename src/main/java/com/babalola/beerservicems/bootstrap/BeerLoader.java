@@ -5,13 +5,12 @@ import com.babalola.beerservicems.repositories.BeerRepository;
 import com.babalola.domain.Beer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
 
 @RequiredArgsConstructor
-@Component
+//@Component
 public class BeerLoader implements CommandLineRunner {
 
     public static final String BEER_1_UPC = "0631234200036";
@@ -61,7 +60,7 @@ public class BeerLoader implements CommandLineRunner {
                 .beerName("Guiness Extra Smooth")
                 .beerStyle(BeerStyle.PILSNER.name())
                 .quantityToBrew(20000)
-                .upc("123453534L")
+                .upc(BEER_1_UPC)
                 .price(new BigDecimal("200.54"))
                 .minOnHand(1500)
                 .build());
@@ -79,7 +78,7 @@ public class BeerLoader implements CommandLineRunner {
                 .beerName("Heineken")
                 .beerStyle(BeerStyle.ALE.name())
                 .quantityToBrew(900000)
-                .upc("123345345456L")
+                .upc(BEER_2_UPC)
                 .price(new BigDecimal("700.54"))
                 .minOnHand(1500)
                 .build());
@@ -89,7 +88,7 @@ public class BeerLoader implements CommandLineRunner {
                 .beerName("Guiness Extra Smooth")
                 .beerStyle(BeerStyle.LAGER.name())
                 .quantityToBrew(20000)
-                .upc("127823L")
+                .upc(BEER_3_UPC)
                 .price(new BigDecimal("200.54"))
                 .minOnHand(1500)
                 .build());

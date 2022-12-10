@@ -17,7 +17,7 @@ import java.util.UUID;
 
 
 @Slf4j
-@ConfigurationProperties(prefix = "com.babalola", ignoreInvalidFields = true)
+@ConfigurationProperties(prefix = "com.babalola", ignoreUnknownFields = true)
 @Component
 public class BeerInventoryServiceRestTemplate implements BeerInventoryInterface {
 

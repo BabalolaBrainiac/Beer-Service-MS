@@ -108,7 +108,7 @@ public class BeerService implements BeerInterface {
         return null;
     }
 
-    @Cacheable(cacheNames = "beerUpcCache")
+    @Cacheable(cacheNames = "beerUpcCache", key = "#upc")
     @Override
     public BeerDTO getByUpc(String upc) {
         return beerMapper.beerToBeerDTO(beerRepository.findByUpc(upc));
