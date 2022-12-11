@@ -45,7 +45,7 @@ public class BeerController {
             pageSize = DEFAULT_PAGE_SIZE;
         }
 
-        BeerListPageable beerList = beerService.listBeers(beerName, beerStyle, PageRequest.ofSize(pageNumber), true);
+        BeerListPageable beerList = beerService.listBeers(beerName, beerStyle, PageRequest.of(pageNumber, pageSize), true);
 
         System.out.println("Controller working");
         return new ResponseEntity<>(beerList, HttpStatus.OK);
