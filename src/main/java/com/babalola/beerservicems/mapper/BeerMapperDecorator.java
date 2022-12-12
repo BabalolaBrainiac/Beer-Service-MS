@@ -2,7 +2,7 @@ package com.babalola.beerservicems.mapper;
 
 import com.babalola.beerservicems.interfaces.BeerInventoryInterface;
 import com.babalola.beerservicems.models.BeerDTO;
-import com.babalola.domain.Beer;
+import com.babalola.beerservicems.domain.Beer;
 import org.springframework.beans.factory.annotation.Autowired;
 
 

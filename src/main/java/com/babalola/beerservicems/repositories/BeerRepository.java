@@ -1,7 +1,7 @@
 package com.babalola.beerservicems.repositories;
 
 import com.babalola.beerservicems.models.BeerStyle;
-import com.babalola.domain.Beer;
+import com.babalola.beerservicems.domain.Beer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

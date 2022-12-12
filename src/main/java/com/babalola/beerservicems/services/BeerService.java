@@ -6,7 +6,7 @@ import com.babalola.beerservicems.models.BeerDTO;
 import com.babalola.beerservicems.models.BeerListPageable;
 import com.babalola.beerservicems.models.BeerStyle;
 import com.babalola.beerservicems.repositories.BeerRepository;
-import com.babalola.domain.Beer;
+import com.babalola.beerservicems.domain.Beer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.crossstore.ChangeSetPersister;

@@ -1,4 +1,4 @@
-package com.babalola.domain;
+package com.babalola.beerservicems.domain;
 
 
 import lombok.*;

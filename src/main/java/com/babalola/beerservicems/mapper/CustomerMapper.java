@@ -1,7 +1,7 @@
 package com.babalola.beerservicems.mapper;
 
 import com.babalola.beerservicems.models.CustomerDTO;
-import com.babalola.domain.Customer;
+import com.babalola.beerservicems.domain.Customer;
 import org.mapstruct.Mapper;
 
 
