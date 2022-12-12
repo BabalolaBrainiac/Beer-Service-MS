@@ -140,3 +140,6 @@ Desktop.ini
 .eslintcache
 /.idea/
 
+.
+
+!/src/main/resources/application-mysql-beer-local.properties
