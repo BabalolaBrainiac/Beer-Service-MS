@@ -1,4 +1,4 @@
-package com.babalola.beerservicems.events.listeners;
+package com.babalola.beerservicems.events.event_listeners;
 
 
 import com.babalola.beerservicems.configuration.JMSConfig;

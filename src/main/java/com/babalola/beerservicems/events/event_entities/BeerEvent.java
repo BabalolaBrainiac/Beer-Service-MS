@@ -1,6 +1,7 @@
-package com.babalola.beerservicems.models;
+package com.babalola.beerservicems.events.event_entities;
 
 
+import com.babalola.beerservicems.models.BeerDTO;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

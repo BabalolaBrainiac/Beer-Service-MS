@@ -1,8 +1,8 @@
 package com.babalola.beerservicems.events;
 
 
+import com.babalola.beerservicems.events.event_entities.BeerEvent;
 import com.babalola.beerservicems.models.BeerDTO;
-import com.babalola.beerservicems.models.BeerEvent;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor

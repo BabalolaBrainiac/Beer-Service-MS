@@ -1,4 +1,4 @@
-package com.babalola.beerservicems.services;
+package com.babalola.beerservicems.events.event_services;
 
 
 import com.babalola.beerservicems.configuration.JMSConfig;
