@@ -14,10 +14,40 @@
     <description>Beer-Service-MS</description>
     <properties>
         <java.version>11</java.version>
+        <docker.image.prefix>babalolabrain</docker.image.prefix>
+        <docker.image.name>${project.artifactId}</docker.image.name>
     </properties>
     <dependencies>
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.33.0</version>
+                <configuration>
+                    <verbose>true</verbose>
+                    <images>
+                        <name>${docker.image.prefix}/${docker.image.name}</name>
+                        <alias>${project.artifactId}</alias>
+                        <build>
+                            <assembly>
+                                <descriptorRef>artifact</descriptorRef>
+                            </assembly>
+                            <dockerFile>Dockerfile</dockerFile>
+                            <tags>
+                                <tag>latest</tag>
+                                <tag>${project.version}</tag>
+                            </tags>
+                        </build>
+                    </images>
+                </configuration>
+
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
